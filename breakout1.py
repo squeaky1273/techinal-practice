@@ -1,14 +1,12 @@
-def find_if_duplicates(arr, n):
-    new_set = []
-    for i in range(n):
-        if arr[i] in new_set:
+def find_if_duplicates(arr):
+    for num1 in range(len(arr)):
+        for num2 in range(0, num1):
+            if arr[num1] == arr[num2]:
                 return True
-                new_set.append(arr[i])
-        return False
+    return False
 
 arr = [10, 3, 4, 2, 2, 6]
-n = len(arr)
-if find_if_duplicates(arr, n):
-    print(“There are duplicates”)
+if find_if_duplicates(arr):
+    print("There are duplicates")
 else:
-	print(“No duplicates”)
+	print("No duplicates")
