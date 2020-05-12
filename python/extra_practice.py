@@ -24,6 +24,7 @@ def left_rotation(arr, d):
                 arr[i] = arr[i+1]
         # starting value moved to end of array
         arr[-1] = start
+    # return shifted array
     return arr[i]
 
 arr = [1, 2, 3, 4]
