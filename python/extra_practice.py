@@ -13,28 +13,55 @@
 # OK to ask the interviewer for syntax if stuck on syntax issues, or just use psuedocode 
 
 
-def left_rotation(arr, d):
-    # Shift value over by d
-    for i in range(0, d):
-        # starting value in array
-        start = arr[0]
-        # Shift value over by 1
-        for i in range(len(arr)):
-            if i < len(arr)-1:
-                arr[i] = arr[i+1]
-        # starting value moved to end of array
-        arr[-1] = start
-    # return shifted array
-    return arr[i]
+# def left_rotation(arr, d):
+#     # Shift value over by d
+#     for i in range(0, d):
+#         # starting value in array
+#         start = arr[0]
+#         # Shift value over by 1
+#         for i in range(len(arr)):
+#             if i < len(arr)-1:
+#                 arr[i] = arr[i+1]
+#         # starting value moved to end of array
+#         arr[-1] = start
+#     # return shifted array
+#     return arr[i]
 
-arr = [1, 2, 3, 4]
-d = 2
-
-# variable table
 # arr = [1, 2, 3, 4]
 # d = 2
-# i = 1
-# arr = [3, 4, 1, 2] (after shift)
+
+# # variable table
+# # arr = [1, 2, 3, 4]
+# # d = 2
+# # i = 1
+# # arr = [3, 4, 1, 2] (after shift)
+
+# using modulos and adding to a new array:
+def left_rotate(arr, n, d): 
+    new_arr = []
+    # Starting point
+    mod = d % n 
+    for i in range(n): 
+        new_arr.append(arr[(mod + i) % n])
+    return new_arr
+
+# variable table:
+# arr = [1, 2, 3, 4]
+# i = 1, 2, 3, 4
+# n (length of array) = 4
+# d (number of rotations) = 3
+# new_arr = [4, 1, 2, 3]
+
+
+arr = [1, 2, 3, 4]
+n = len(arr)
+d = 3
+
+print(left_rotate(arr, n, d))
+
+
+
+
 
 # problem: Find the left rotation, based d number of times it will be moved:
 
